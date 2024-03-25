@@ -1,5 +1,5 @@
 <script>
-var theproxy = "https://ca.indiancoins.com/service/";
+var url = "https://ca.indiancoins.com/service/";
 function encode(str) {
     return encodeURIComponent(
                 str
@@ -11,13 +11,13 @@ function encode(str) {
                     .join('')
             );
 };
-function search(url) {
-  document.getElementById('frame').src = theproxy + encode(url);
-  document.getElementById('frame').style.display = "block";
-  document.getElementById('ti').style.display = "none";
+function search() {
+    document.getElementById('frame').src = url + encode(document.getElementById('text').value);
+    document.getElementById('frame').style.display = "block";
+    document.getElementById('text').style.display = "none";
 };
 </script>
 <body>
-  <center><input onkeydown="if (event.key == 'Enter'){search(document.getElementById('ti').value);}else{}" id="ti" placeholder="Search"></center>
-  <iframe style="display: none;" src="" height="100%" width="100%"></iframe>
+  <center><input onkeydown="if (event.key == 'Enter'){search();}else{}" id="text" placeholder="Search"></center>
+  <iframe style="display: none;" src="" id="frame" height="100%" width="100%"></iframe>
 </body>
