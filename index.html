@@ -19,10 +19,12 @@ function encode(str) {
 function search() {
     document.getElementById('frame').src = url + encode(document.getElementById('text').value);
     document.getElementById('frame').style.display = "block";
+    document.getElementById('hedr').style.display = "none";
     document.getElementById('text').style.display = "none";
 };
 </script>
 <body>
+  <center><h1 id="hedr" style="display: block;">Gold UB</h1></center>
   <center><input onkeydown="if (event.key == 'Enter'){search();}else{}" id="text" placeholder="Search"></center>
   <iframe style="display: none;" src="" id="frame" height="100%" width="100%"></iframe>
 </body>
