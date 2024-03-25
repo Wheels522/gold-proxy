@@ -1,0 +1,22 @@
+<script>
+function encode(str) {
+    return encodeURIComponent(
+                str
+                    .toString()
+                    .split('')
+                    .map((char, ind) =>
+                        ind % 2 ? String.fromCharCode(char.charCodeAt() ^ 2) : char
+                    )
+                    .join('')
+            );
+}
+function search(url) {
+  document.getElementById('frame').src = window.location.href + encode(url);
+  document.getElementById('frame').style.display = "block";
+  document.getElementById('ti').style.display = "none";
+}
+</script>
+<body>
+  <center><input onkeydown="if (event.key == 'Enter'){search();}else{}" id="ti" placeholder="Search"></center>
+  <iframe style="display: none;" src="" height="100%" width="100%"></iframe>
+</body>
