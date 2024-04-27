@@ -1,30 +1,46 @@
 <style>
 body {
-    background-color: gold;
+    background-image: url('https://img.freepik.com/free-vector/gold-luxury-background_23-2148616618.jpg?size=626&ext=jpg&ga=GA1.1.537991620.1711419608&semt=ais');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#hedr {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2em;
+    color: gold; /* Set heading text color to gold */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 50px;
+    animation: sparkle 1s infinite alternate; /* Apply sparkle animation */
+}
+
+@keyframes sparkle {
+    0% {
+        text-shadow: none;
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px gold, 0 0 70px gold, 0 0 80px gold, 0 0 100px gold, 0 0 150px gold;
+    }
+    100% {
+        text-shadow: none;
+    }
+}
+
+#footer {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8em;
+    color: #333;
 }
 </style>
-<script>
-var url = "https://ca.indiancoins.com/service/";
-function encode(str) {
-    return encodeURIComponent(
-                str
-                    .toString()
-                    .split('')
-                    .map((char, ind) =>
-                        ind % 2 ? String.fromCharCode(char.charCodeAt() ^ 2) : char
-                    )
-                    .join('')
-            );
-};
-function search() {
-    document.getElementById('frame').src = url + encode(document.getElementById('text').value);
-    document.getElementById('frame').style.display = "block";
-    document.getElementById('hedr').style.display = "none";
-    document.getElementById('text').style.display = "none";
-};
-</script>
+p
 <body>
   <center><h1 id="hedr" style="display: block;">Gold UB</h1></center>
   <center><input onkeydown="if (event.key == 'Enter'){search();}else{}" id="text" placeholder="Search"></center>
   <iframe style="display: none;" src="" id="frame" height="100%" width="100%"></iframe>
+  
+  <div id="footer">Made by Wheels and holgrave77</div>
 </body>
