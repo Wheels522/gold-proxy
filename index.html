@@ -39,8 +39,11 @@ body {
 p
 <body>
   <center><h1 id="hedr" style="display: block;">Gold UB</h1></center>
-  <center><input onkeydown="if (event.key == 'Enter'){search();}else{}" id="text" placeholder="Search"></center>
-  <iframe style="display: none;" src="" id="frame" height="100%" width="100%"></iframe>
+  <center>
+<form id="uv-form"">
+<input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden"/> 
+<input id="uv-address" type="text" placeholder="Search Google or type an URL" class="form__input"/>
+</form>></center>
   
   <div id="footer">Made by Wheels and holgrave77</div>
 </body>
